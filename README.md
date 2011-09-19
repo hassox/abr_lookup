@@ -40,7 +40,12 @@ object.
 ### Use as middleware
 
 You can use AbrLookup as middleware in your Rack application to respond
-to JSON requests at "/abn\_lookup"
+to JSON requests at "/abn\_lookup" and takes a parameter of 'abn'
+containig the number to search for
+
+#### Example
+
+/abn\_lookup?abn=12345677 #=> A JSON response
 
 To setup the middleware
 
@@ -52,6 +57,7 @@ run app
 #### Rails
 
 Rails.configuration.middleware.insert AbrLookup::Server
+
 
 
 ## Configuration
