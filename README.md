@@ -8,18 +8,18 @@ A simple Gem to perform ABN and ACN lookups for Australian Businesses
 
 <pre><code>
   lookup = AbrLookup::Lookup.new('my abn').lookup_abn!
-  lookup.abn # abn number
-  lookup.current # true if the abn is currently active
+  lookup.abn           # abn number
+  lookup.current       # true if the abn is currently active
   lookup.lookup_number # The number that was given to query
   
   # Entity Information
-  lookup.entity_status # Active for active abns
-  lookup.entity_type   # A code to indicate the type of entity 
+  lookup.entity_status           # Active for active abns
+  lookup.entity_type             # A code to indicate the type of entity
   lookup.entity_type_description
-  lookup.effective_from # The date the abn was registered
-  lookup.effective_to # Not usable if the abn is still active
+  lookup.effective_from          # The date the abn was registered
+  lookup.effective_to            # Not usable if the abn is still active
   lookup.trading_name
-  lookup.state_code # The state the abn is registered in
+  lookup.state_code              # The state the abn is registered in
   lookup.postcode
   
   # Business Registerer
