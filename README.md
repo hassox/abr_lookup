@@ -51,12 +51,14 @@ To setup the middleware
 
 #### Rack
 
-use AbrLookup::Server
+<pre><code>use AbrLookup::Server
 run app
+</code></pre>
 
 #### Rails
 
-Rails.configuration.middleware.insert AbrLookup::Server
+<pre><code>Rails.configuration.middleware.insert
+AbrLookup::Server</code></pre>
 
 
 
