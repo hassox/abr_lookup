@@ -68,7 +68,7 @@ describe AbrLookup::Lookup do
       attrs = result.attributes
       attrs.keys.size.should == 2
       attrs.keys.should include(:errors, :lookup_number)
-      attrs[:errors][:Search].should include('Search text is not a valid ABN or ACN')
+      attrs[:errors].should include('Search text is not a valid ABN or ACN')
     end
 
     it "should handle incorrect credentials" do
@@ -84,7 +84,7 @@ describe AbrLookup::Lookup do
       attrs = result.attributes
       attrs.keys.size.should == 2
       attrs.keys.should include(:errors, :lookup_number)
-      attrs[:errors][:WebServices].should include('The GUID entered is not recognised as a Registered Party. : abcde')
+      attrs[:errors].should include('The GUID entered is not recognised as a Registered Party. : abcde')
     end
   end
 end

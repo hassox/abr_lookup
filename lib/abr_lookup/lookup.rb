@@ -21,7 +21,7 @@ module AbrLookup
     def attributes
       attrs = {:lookup_number => lookup_number}
       if errors.present?
-        attrs[:errors] = errors.to_hash
+        attrs[:errors] = errors.full_messages.join(", ")
       else
         ATTRIBUTES.inject(attrs){|hash, attr| hash[attr] = send(attr) if send(attr).present?; hash }
       end
