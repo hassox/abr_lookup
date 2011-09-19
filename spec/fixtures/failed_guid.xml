@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ABRPayloadSearchResults xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://abr.business.gov.au/ABRXMLSearchRPC/literalTypes">
+  <request>
+    <identifierSearchRequest>
+      <authenticationGUID>abcde</authenticationGUID>
+      <identifierType>ABN</identifierType>
+      <identifierValue>98765</identifierValue>
+      <history>Y</history>
+    </identifierSearchRequest>
+  </request>
+  <response>
+    <dateRegisterLastUpdated>0001-01-01</dateRegisterLastUpdated>
+    <dateTimeRetrieved>2011-09-17T12:49:21.0937904+10:00</dateTimeRetrieved>
+    <exception>
+      <exceptionDescription>
+        The GUID entered is not recognised as a Registered Party. : abcde
+      </exceptionDescription>
+      <exceptionCode>WebServices</exceptionCode>
+    </exception>
+  </response>
+</ABRPayloadSearchResults>
+
+

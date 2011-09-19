@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ABRPayloadSearchResults xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://abr.business.gov.au/ABRXMLSearchRPC/literalTypes">
+  <request>
+    <identifierSearchRequest>
+      <authenticationGUID>xxxxxxxxxxxxxxxx</authenticationGUID>
+      <identifierType>ABN</identifierType>
+      <identifierValue>18 406 500 889</identifierValue>
+      <history>N</history>
+    </identifierSearchRequest>
+  </request>
+  <response>
+    <usageStatement>This extract is based on information that was supplied by businesses to the 
+		Registrar of the Australian Business Register. Neither the Registrar of the ABR 
+		nor the Commonwealth guarantee that this information is accurate, up to date or 
+		complete. You should consider verifying this information from other sources.</usageStatement>
+    <dateRegisterLastUpdated>2011-09-19</dateRegisterLastUpdated>
+    <dateTimeRetrieved>2011-09-19T15:12:07.0503404+10:00</dateTimeRetrieved>
+    <businessEntity>
+      <recordLastUpdatedDate>2010-09-17</recordLastUpdatedDate>
+      <ABN>
+        <identifierValue>18406500889</identifierValue>
+        <isCurrentIndicator>Y</isCurrentIndicator>
+        <replacedFrom>0001-01-01</replacedFrom>
+      </ABN>
+      <entityStatus>
+        <entityStatusCode>Active</entityStatusCode>
+        <effectiveFrom>2002-12-01</effectiveFrom>
+        <effectiveTo>0001-01-01</effectiveTo>
+      </entityStatus>
+      <ASICNumber />
+      <entityType>
+        <entityTypeCode>IND </entityTypeCode>
+        <entityDescription>Individual/Sole Trader</entityDescription>
+      </entityType>
+      <legalName>
+        <givenName>CHRISANTHY</givenName>
+        <otherGivenName />
+        <familyName>BARONE</familyName>
+        <effectiveFrom>2010-09-16</effectiveFrom>
+        <effectiveTo>0001-01-01</effectiveTo>
+      </legalName>
+      <mainTradingName>
+        <organisationName>CLARITY - Create Inner Space &amp; Clarity</organisationName>
+        <effectiveFrom>2003-02-28</effectiveFrom>
+      </mainTradingName>
+      <mainBusinessPhysicalAddress>
+        <stateCode>SA</stateCode>
+        <postcode>5067</postcode>
+        <effectiveFrom>2002-12-01</effectiveFrom>
+        <effectiveTo>0001-01-01</effectiveTo>
+      </mainBusinessPhysicalAddress>
+    </businessEntity>
+  </response>
+</ABRPayloadSearchResults>
+
