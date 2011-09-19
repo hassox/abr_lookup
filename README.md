@@ -57,8 +57,7 @@ run app
 
 #### Rails
 
-<pre><code>Rails.configuration.middleware.insert
-AbrLookup::Server</code></pre>
+<pre><code>Rails.configuration.middleware.insert AbrLookup::Server</code></pre>
 
 
 
