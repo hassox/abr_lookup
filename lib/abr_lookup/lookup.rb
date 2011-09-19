@@ -61,9 +61,9 @@ module AbrLookup
         self.given_name  = node.css('legalName givenName').text.strip
         self.family_name = node.css('legalName familyName').text.strip
 
-        self.trading_name = node.css('mainTradingName organisationName'      ).text.strip
-        self.state_code   = node.css('mainBusinessPhysicalAddress stateCode' ).text.strip
-        self.postcode     = node.css('mainBusinessPhysicalAddress postcode'  ).text.strip
+        self.trading_name = node.css('mainTradingName organisationName'      ).first.try(:text).try(:strip)
+        self.state_code   = node.css('mainBusinessPhysicalAddress stateCode' ).first.try(:text).try(:strip)
+        self.postcode     = node.css('mainBusinessPhysicalAddress postcode'  ).first.try(:text).try(:strip)
 
         node.css('exception').each do |exception|
           errors.add(exception.css('exceptionCode').text.strip, exception.css('exceptionDescription').text.strip)
@@ -72,7 +72,7 @@ module AbrLookup
     end
 
     def perform_abn_lookup
-      query = "searchString=#{lookup_number}&includeHistoricalDetails=Y&authenticationGuid=#{AbrLookup.guid}"
+      query = "searchString=#{lookup_number}&includeHistoricalDetails=N&authenticationGuid=#{AbrLookup.guid}"
       uri = AbrLookup.abn_lookup_uri.dup
       uri.query = query
       Net::HTTP.get_response(uri).body
