@@ -61,7 +61,7 @@ module AbrLookup
         self.given_name  = node.css('legalName givenName').text.strip
         self.family_name = node.css('legalName familyName').text.strip
 
-        self.trading_name = node.css('mainTradingName organisationName'      ).first.try(:text).try(:strip)
+        self.trading_name = node.css('mainName organisationName'             ).first.try(:text).try(:strip)
         self.state_code   = node.css('mainBusinessPhysicalAddress stateCode' ).first.try(:text).try(:strip)
         self.postcode     = node.css('mainBusinessPhysicalAddress postcode'  ).first.try(:text).try(:strip)
 
