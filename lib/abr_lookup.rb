@@ -8,7 +8,7 @@ module AbrLookup
   autoload :Server, 'abr_lookup/server'
 
   def self.abn_lookup_uri
-    @abn_lookup_url ||= URI.parse("http://abr.business.gov.au/ABRXMLSearchRPC/ABRXMLSearch.asmx/ABRSearchByABNv201205")
+    @abn_lookup_url ||= URI.parse("http://abr.business.gov.au/abrxmlsearchRPC/AbrXmlSearch.asmx/SearchByABNv201205")
   end
 
   def self.guid
