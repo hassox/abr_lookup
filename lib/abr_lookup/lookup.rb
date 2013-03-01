@@ -36,6 +36,11 @@ module AbrLookup
       parse_abn_response(perform_abn_lookup)
       self
     end
+    
+    def lookup_asic!
+      parse_abn_response(perform_asic_lookup)
+      self
+    end
 
     private
     def parse_abn_response(response)
@@ -61,7 +66,7 @@ module AbrLookup
         self.given_name  = node.css('legalName givenName').text.strip
         self.family_name = node.css('legalName familyName').text.strip
 
-        self.trading_name = node.css('mainTradingName organisationName'      ).first.try(:text).try(:strip)
+        self.trading_name = node.css('mainName organisationName'             ).first.try(:text).try(:strip)
         self.state_code   = node.css('mainBusinessPhysicalAddress stateCode' ).first.try(:text).try(:strip)
         self.postcode     = node.css('mainBusinessPhysicalAddress postcode'  ).first.try(:text).try(:strip)
 
@@ -74,6 +79,13 @@ module AbrLookup
     def perform_abn_lookup
       query = "searchString=#{lookup_number}&includeHistoricalDetails=N&authenticationGuid=#{AbrLookup.guid}"
       uri = AbrLookup.abn_lookup_uri.dup
+      uri.query = query
+      Net::HTTP.get_response(uri).body
+    end
+    
+    def perform_asic_lookup
+      query = "searchString=#{lookup_number}&includeHistoricalDetails=N&authenticationGuid=#{AbrLookup.guid}"
+      uri = AbrLookup.asic_lookup_uri.dup
       uri.query = query
       Net::HTTP.get_response(uri).body
     end
